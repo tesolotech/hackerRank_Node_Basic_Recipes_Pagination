@@ -27,6 +27,13 @@ exports.getReceipts = (req, res) => {
             data: rec.slice(startIndex, endIndex)
         }
         res.status(200).json(response);
+    } else if (req.query.page) {
+        let response = {
+            status: 200,
+            message: "SUCEESS",
+            data: rec.slice(req.query.page, 3)
+        }
+        res.status(200).json(response);
     } else {
 
         res.status(200).json(rec.slice(0, 3));
