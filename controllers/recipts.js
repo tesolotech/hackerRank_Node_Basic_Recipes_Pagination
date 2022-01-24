@@ -28,7 +28,8 @@ exports.getReceipts = (req, res) => {
         }
         res.status(200).json(response);
     } else {
-        res.status(200).json(rec);
+
+        res.status(200).json(rec.slice(0, 3));
     }
 
 
